@@ -1,23 +1,28 @@
-const { menu, pausa } = require('./models/menu');
-const { crearTarea, listarTarea} = require('./models/tareas')
+const { menu, pausa, leer } = require('./models/menu');
+const Tareas = require('./tasks/tareas');
 
 const principal = async () => {
     let opt = '0';
+
+    const tareas = new Tareas();
 
     do {
         opt = await menu();
 
         switch (opt) {
             case '1':
-                await crearTarea();  // Llama a la función para crear una tarea
+                const descripcion = await leer('Descripcion: ');
+                tareas.crearTarea(descripcion);
                 break;
+
             case '2':
-                listarTarea();  // Llama a la función para listar las tareas
+                console.log(tareas.listadoArray);
                 break;
+
         }
 
-     await pausa();
-    } while (opt !== '5');
+        await pausa();
+    } while (opt !== '7');
 };
 
 principal();

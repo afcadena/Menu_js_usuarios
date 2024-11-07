@@ -18,46 +18,68 @@ const questions= {
         },
         {
             value: '3',
-            name: '3. Eliminar tarea'
+            name: '3. Listar tareas completas '
         },
         {
             value: '4',
-            name: '4. Editar tarea'
+            name: '4. Listar tareas pendientes'
         },
         {
             value: '5',
-            name: '5. Salir'
+            name: '5. Completar tarea'
+        },
+        {
+            value: '6',
+            name: '6. Eliminar tarea'
+        },
+        {
+            value: '7',
+            name: '7. Salir del menú'
         }
     ]
 
 }
 
-const menu = async () =>{
-    console.clear();  //Limpia la consola 
+const menu = async () => {
+    console.clear();  // Limpia la consola
     console.log(`${'°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°'.blue}`);
     console.log(`${'°                                   °'.blue}`);
     console.log(`${'°         Bienvenido al menú        °'.yellow}`);
     console.log(`${'°                                   °'.blue}`);
     console.log(`${'°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°'.blue}`);
 
-    const {options} = await inquirer.default.prompt(questions);
-    return  options; //retorna la opción que el usuario selecciona
+    const { options } = await inquirer.default.prompt(questions);
+    return options;
+};
 
-}
-
-const pausa = async ()=>{
+const pausa = async () => {
     const question = {
-        typer: 'input',
+        type: 'input',
         name: 'enter',
-        message: `Presione la tecla ${'enter'.green}`
-    }
-    await inquirer.default.prompt(question); // el await se asegura que el programa espere antes de continuar 
-}
+        message: `Presione la tecla ${'enter'.green} para continuar`
+    };
+    await inquirer.default.prompt(question);
+};
 
+const leer = async (message) => {
+    const question = [{
+        type: 'input',
+        name: 'descripcion', 
+        message,
+        validate(value) {
+            if (value.length === 0) {
+                return 'Por favor ingrese un valor';
+            }
+            return true;
+        }
+    }];
 
+    const { descripcion } = await inquirer.default.prompt(question);
+    return descripcion;
+};
 
 module.exports = {
     menu,
-    pausa
-
-}; 
+    pausa,
+    leer
+};
