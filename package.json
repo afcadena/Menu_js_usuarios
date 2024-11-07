@@ -1,0 +1,17 @@
+{
+  "name": "menujs",
+  "version": "1.0.0",
+  "description": "Andres Felipe Cadena Castillo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andres Felipe Cadena Castillo",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^12.0.1",
+    "menujs": "file:",
+    "uuid": "^11.0.2"
+  }
+}
