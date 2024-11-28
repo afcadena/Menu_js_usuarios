@@ -1,6 +1,6 @@
 const { menu, pausa, leer } = require('./models/menu');
 const Tareas = require('./tasks/tareas');
-const inquirer = require('inquirer'); // Asegúrate de importar inquirer aquí
+const inquirer = require('inquirer');
 
 
 const principal = async () => {
