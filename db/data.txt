@@ -1,1 +1,1 @@
-{"da2e4d9a-47b9-49c8-a62d-04e960496153":{"id":"da2e4d9a-47b9-49c8-a62d-04e960496153","descripcion":"Hola mundo ","completado":false},"b7de9c40-e9db-474c-adc3-f7f7d86cf242":{"id":"b7de9c40-e9db-474c-adc3-f7f7d86cf242","descripcion":"ADIOS","completado":false},"8cb5b119-0a97-44b9-935a-dfe3799196df":{"id":"8cb5b119-0a97-44b9-935a-dfe3799196df","descripcion":"Hola tu ","completado":true}}
+{"1732839235277":{"id":"1732839235277","nombre":"Yo","email":"afca@test","telefono":"123231313123","activo":true,"fechaCreacion":"2024-11-29T00:13:55.282Z"}}

@@ -1,50 +1,44 @@
-var colors = require('colors')  //se encarga de ponerle colores distintivos en la linea de comandos en los textos
- //console.log(`${'Hola mundo'.blue}`); bactir que sirve para agregar variables dentro de los corchetes
+var colors = require('colors'); // Se encarga de ponerle colores distintivos en la línea de comandos en los textos
 const inquirer = require('inquirer');
 
-const questions= {
-
+const questions = {
     type: 'list',
     name: 'options',
     message: 'Escoge la opción de tu preferencia. ',
     choices: [
         {
             value: '1',
-            name: '1. Crear tarea'
+            name: '1. Crear usuario'
         },
         {
             value: '2',
-            name: '2. Listar tareas'
+            name: '2. Listar usuarios'
         },
         {
             value: '3',
-            name: '3. Listar tareas completas '
+            name: '3. Listar usuarios con datos incompletos'
         },
         {
             value: '4',
-            name: '4. Listar tareas pendientes'
+            name: '4. Actualizar usuario'
         },
         {
             value: '5',
-            name: '5. Completar tarea'
+            name: '5. Eliminar usuario'
         },
         {
             value: '6',
-            name: '6. Eliminar tarea'
-        },
-        {
-            value: '7',
-            name: '7. Salir del menú'
+            name: '6. Salir del menú'
         }
     ]
-
-}
+};
 
 const menu = async () => {
-    console.clear();  // Limpia la consola
+    console.clear(); // Limpia la consola
     console.log(`${'°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°'.blue}`);
     console.log(`${'°                                   °'.blue}`);
     console.log(`${'°         Bienvenido al menú        °'.yellow}`);
+    console.log(`${'°        Gestión de Usuarios        °'.yellow}`);
     console.log(`${'°                                   °'.blue}`);
     console.log(`${'°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°'.blue}`);
 
